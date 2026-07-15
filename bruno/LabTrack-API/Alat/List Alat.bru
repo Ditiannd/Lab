@@ -1,0 +1,33 @@
+meta {
+  name: List Alat
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/alat?q=&kategori=&kondisi=&tersedia=&per_page=15
+  body: none
+}
+
+params:query {
+  q: 
+  kategori: 
+  kondisi: 
+  tersedia: 
+  per_page: 15
+}
+
+headers {
+  Accept: application/json
+}
+
+docs {
+  Semua role (admin, petugas, siswa) yang sudah login boleh mengakses.
+
+  Query params opsional:
+  - q         : cari nama_alat / lokasi
+  - kategori  : filter kategori persis
+  - kondisi   : baik | rusak
+  - tersedia  : true → hanya alat kondisi baik & stok > 0
+  - per_page  : jumlah item per halaman (default 15)
+}

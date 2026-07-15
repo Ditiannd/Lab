@@ -1,0 +1,17 @@
+meta {
+  name: Get Profil Saya (Me)
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/api/me
+}
+
+headers {
+  Accept: application/json
+}
+
+docs {
+  Mengembalikan data user yang sedang login berdasarkan token aktif.
+}

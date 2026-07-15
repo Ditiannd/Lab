@@ -1,0 +1,25 @@
+meta {
+  name: Update Alat dengan Foto (admin, multipart)
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/api/alat/1
+  body: multipartForm
+}
+
+headers {
+  Accept: application/json
+}
+
+body:multipart-form {
+  _method: PUT
+  stok: 8
+  foto: @file()
+}
+
+docs {
+  Method spoofing: kirim POST + field `_method=PUT` karena PHP tidak
+  mem-parsing body multipart pada request PUT/PATCH asli.
+}

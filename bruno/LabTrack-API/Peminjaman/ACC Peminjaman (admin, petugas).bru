@@ -1,0 +1,20 @@
+meta {
+  name: ACC Peminjaman (admin, petugas)
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{baseUrl}}/api/peminjaman/1/acc
+  body: none
+}
+
+headers {
+  Accept: application/json
+}
+
+docs {
+  Menyetujui pengajuan. Stok alat otomatis dikurangi sejumlah `jumlah`
+  yang diajukan, dijalankan dalam DB transaction + row lock agar aman
+  dari race condition saat approval bersamaan.
+}

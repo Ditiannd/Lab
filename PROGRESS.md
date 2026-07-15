@@ -2,6 +2,14 @@
 
 ## ✅ SUDAH SELESAI
 
+### REST API (Sanctum) — BARU
+- `routes/api.php` — seluruh endpoint `/api/*` (auth, alat, siswa, users, peminjaman, pengembalian, kerusakan, dashboard)
+- `app/Http/Controllers/Api/*` — controller API terpisah dari controller web
+- `app/Http/Requests/Api/*`, `app/Http/Resources/*` — validasi & format JSON konsisten
+- `app/Http/Middleware/EnsureApiRole.php` — role guard khusus API (selalu balas JSON)
+- `bruno/LabTrack-API/` — koleksi Bruno siap import
+- Dokumentasi lengkap: lihat `API.md`
+
 ### Views
 - `resources/views/layouts/app.blade.php` — Layout utama iOS 18 style
 - `resources/views/partials/sidebar.blade.php` — Sidebar per role

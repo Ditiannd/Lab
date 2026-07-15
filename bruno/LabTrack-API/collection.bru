@@ -1,0 +1,12 @@
+auth {
+  mode: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+script:pre-request {
+  // Kosong. Auth default seluruh collection: Bearer {{token}}
+  // (otomatis terisi setelah request "Login" di folder Auth dijalankan).
+}

@@ -1,0 +1,21 @@
+meta {
+  name: List Siswa (admin)
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/siswa?q=&jurusan=&kelas=&per_page=20
+  body: none
+}
+
+params:query {
+  q: 
+  jurusan: 
+  kelas: 
+  per_page: 20
+}
+
+headers {
+  Accept: application/json
+}

@@ -1,0 +1,26 @@
+meta {
+  name: List Peminjaman
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/peminjaman?status=&per_page=15
+  body: none
+}
+
+params:query {
+  status: 
+  per_page: 15
+}
+
+headers {
+  Accept: application/json
+}
+
+docs {
+  - admin/petugas: melihat SEMUA pengajuan.
+  - siswa       : otomatis hanya melihat riwayat miliknya sendiri.
+
+  Filter opsional `status`: pending | acc | ditolak | selesai
+}

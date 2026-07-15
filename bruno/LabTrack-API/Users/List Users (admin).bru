@@ -1,0 +1,19 @@
+meta {
+  name: List Users (admin)
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/users
+  body: none
+}
+
+headers {
+  Accept: application/json
+}
+
+docs {
+  Menampilkan akun dengan role admin & petugas saja (siswa dikelola
+  lewat folder "Siswa").
+}

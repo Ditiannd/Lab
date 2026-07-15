@@ -1,0 +1,14 @@
+meta {
+  name: Hapus User (admin)
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{baseUrl}}/api/users/2
+  body: none
+}
+
+headers {
+  Accept: application/json
+}

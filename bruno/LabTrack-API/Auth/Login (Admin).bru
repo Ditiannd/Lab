@@ -1,0 +1,48 @@
+meta {
+  name: Login (Admin)
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/api/login
+  body: json
+  auth: none
+}
+
+headers {
+  Accept: application/json
+}
+
+body:json {
+  {
+    "email": "admin@lab.com",
+    "password": "password",
+    "device_name": "bruno"
+  }
+}
+
+script:post-response {
+  if (res.body && res.body.data && res.body.data.token) {
+    bru.setVar("token", res.body.data.token);
+  }
+}
+
+docs {
+  # Login
+
+  Login menggunakan akun admin/petugas/siswa untuk mendapatkan Bearer Token
+  (Laravel Sanctum Personal Access Token).
+
+  Token yang didapat otomatis disimpan ke variabel collection `{{token}}`
+  lewat script post-response, sehingga semua request lain di collection ini
+  (yang memakai auth "Bearer {{token}}" bawaan collection) langsung bisa
+  dipakai tanpa copy-paste manual.
+
+  Akun default hasil seeder:
+  | Role    | Email             | Password |
+  |---------|-------------------|----------|
+  | Admin   | admin@lab.com     | password |
+  | Petugas | petugas@lab.com   | password |
+  | Siswa   | siswa@lab.com     | password |
+}

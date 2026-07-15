@@ -1,0 +1,31 @@
+meta {
+  name: Catat Pengembalian - Kondisi Rusak (admin, petugas)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api/peminjaman/3/pengembalian
+  body: json
+}
+
+headers {
+  Accept: application/json
+}
+
+body:json {
+  {
+    "tanggal_kembali_aktual": "2026-07-27",
+    "kondisi": "rusak",
+    "deskripsi_kerusakan": "Lensa mikroskop retak saat digunakan",
+    "catatan": "Perlu penggantian lensa"
+  }
+}
+
+docs {
+  Jika kondisi = "rusak", field `deskripsi_kerusakan` wajib diisi.
+  Sistem otomatis:
+  - mengubah kondisi alat menjadi "rusak"
+  - mencatat riwayat kerusakan (bisa dilihat di folder "Kerusakan")
+  - tetap mengembalikan stok (unit fisik kembali, walau kondisinya rusak)
+}

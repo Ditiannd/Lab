@@ -1,0 +1,29 @@
+meta {
+  name: Login (Siswa)
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/login
+  body: json
+  auth: none
+}
+
+headers {
+  Accept: application/json
+}
+
+body:json {
+  {
+    "email": "siswa@lab.com",
+    "password": "password",
+    "device_name": "bruno"
+  }
+}
+
+script:post-response {
+  if (res.body && res.body.data && res.body.data.token) {
+    bru.setVar("token", res.body.data.token);
+  }
+}

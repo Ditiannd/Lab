@@ -1,0 +1,31 @@
+meta {
+  name: Ajukan Peminjaman (siswa)
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/peminjaman
+  body: json
+}
+
+headers {
+  Accept: application/json
+}
+
+body:json {
+  {
+    "id_alat": 1,
+    "tanggal_pinjam": "2026-07-20",
+    "tanggal_kembali": "2026-07-27",
+    "jumlah": 1,
+    "catatan_siswa": "Untuk praktikum kelas XI"
+  }
+}
+
+docs {
+  Wajib login sebagai siswa. Login dulu memakai request
+  "Auth → Login (Siswa)" agar {{token}} terisi token siswa.
+
+  Status pengajuan baru selalu "pending", menunggu ACC dari petugas/admin.
+}

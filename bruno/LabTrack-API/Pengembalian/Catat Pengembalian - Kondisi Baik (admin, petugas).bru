@@ -1,0 +1,28 @@
+meta {
+  name: Catat Pengembalian - Kondisi Baik (admin, petugas)
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/api/peminjaman/1/pengembalian
+  body: json
+}
+
+headers {
+  Accept: application/json
+}
+
+body:json {
+  {
+    "tanggal_kembali_aktual": "2026-07-27",
+    "kondisi": "baik",
+    "catatan": "Alat dikembalikan lengkap dan dalam kondisi baik"
+  }
+}
+
+docs {
+  Peminjaman harus berstatus "acc" terlebih dahulu. Setelah sukses:
+  - status peminjaman → "selesai"
+  - stok alat otomatis bertambah kembali
+}

@@ -1,0 +1,21 @@
+meta {
+  name: Statistik Dashboard (admin)
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/dashboard
+  body: none
+}
+
+headers {
+  Accept: application/json
+}
+
+docs {
+  Ringkasan lengkap untuk dashboard admin: total peminjaman per status,
+  total alat & stok, alat rusak, peminjaman terbaru, alat paling sering
+  dipinjam, peminjaman terlambat, trend 7 hari terakhir, distribusi
+  per jurusan, dan stok per kategori.
+}

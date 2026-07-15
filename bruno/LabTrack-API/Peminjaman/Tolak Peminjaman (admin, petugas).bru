@@ -1,0 +1,20 @@
+meta {
+  name: Tolak Peminjaman (admin, petugas)
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{baseUrl}}/api/peminjaman/2/tolak
+  body: json
+}
+
+headers {
+  Accept: application/json
+}
+
+body:json {
+  {
+    "catatan_petugas": "Stok alat sedang dipakai kelas lain."
+  }
+}

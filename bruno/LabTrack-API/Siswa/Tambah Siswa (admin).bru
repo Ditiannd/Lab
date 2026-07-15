@@ -1,0 +1,31 @@
+meta {
+  name: Tambah Siswa (admin)
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/siswa
+  body: json
+}
+
+headers {
+  Accept: application/json
+}
+
+body:json {
+  {
+    "nama": "Budi Santoso",
+    "nis": "23001",
+    "kelas": "XI RPL 1",
+    "jurusan": "Rekayasa Perangkat Lunak",
+    "angkatan": "2023",
+    "email": "budi.santoso@lab.com",
+    "password": "password"
+  }
+}
+
+docs {
+  Membuat akun login (role siswa) + data profil siswa sekaligus,
+  dalam satu database transaction.
+}

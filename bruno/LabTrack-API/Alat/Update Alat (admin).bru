@@ -1,0 +1,29 @@
+meta {
+  name: Update Alat (admin)
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/api/alat/1
+  body: json
+}
+
+headers {
+  Accept: application/json
+}
+
+body:json {
+  {
+    "stok": 8,
+    "kondisi": "baik",
+    "lokasi": "Lab Biologi - Rak B"
+  }
+}
+
+docs {
+  Partial update (field yang tidak dikirim tidak berubah).
+  Untuk update sekaligus ganti foto, gunakan request
+  "Update Alat dengan Foto (multipart)" — karena PHP tidak bisa
+  mem-parsing body multipart pada method PUT/PATCH secara native.
+}

@@ -1,0 +1,28 @@
+meta {
+  name: Tambah Alat dengan Foto (admin, multipart)
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/api/alat
+  body: multipartForm
+}
+
+headers {
+  Accept: application/json
+}
+
+body:multipart-form {
+  nama_alat: Osiloskop Digital
+  kategori: Elektronika
+  stok: 5
+  kondisi: baik
+  lokasi: Lab Elektronika - Rak B
+  deskripsi: Osiloskop 2 channel untuk praktikum rangkaian
+  foto: @file()
+}
+
+docs {
+  Pilih file pada field `foto` di tab Body → Multipart Form (klik ikon file).
+}

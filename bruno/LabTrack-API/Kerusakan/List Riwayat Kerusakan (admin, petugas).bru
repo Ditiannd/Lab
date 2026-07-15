@@ -1,0 +1,19 @@
+meta {
+  name: List Riwayat Kerusakan (admin, petugas)
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/kerusakan?id_alat=&per_page=20
+  body: none
+}
+
+params:query {
+  id_alat: 
+  per_page: 20
+}
+
+headers {
+  Accept: application/json
+}

@@ -1,0 +1,23 @@
+meta {
+  name: Tambah User Petugas (admin)
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/users
+  body: json
+}
+
+headers {
+  Accept: application/json
+}
+
+body:json {
+  {
+    "name": "Rina Petugas Lab",
+    "email": "rina.petugas@lab.com",
+    "password": "password",
+    "role": "petugas"
+  }
+}

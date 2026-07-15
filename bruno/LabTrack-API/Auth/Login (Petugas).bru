@@ -1,0 +1,29 @@
+meta {
+  name: Login (Petugas)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api/login
+  body: json
+  auth: none
+}
+
+headers {
+  Accept: application/json
+}
+
+body:json {
+  {
+    "email": "petugas@lab.com",
+    "password": "password",
+    "device_name": "bruno"
+  }
+}
+
+script:post-response {
+  if (res.body && res.body.data && res.body.data.token) {
+    bru.setVar("token", res.body.data.token);
+  }
+}

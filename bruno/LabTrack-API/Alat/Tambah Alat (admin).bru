@@ -1,0 +1,30 @@
+meta {
+  name: Tambah Alat (admin)
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/alat
+  body: json
+}
+
+headers {
+  Accept: application/json
+}
+
+body:json {
+  {
+    "nama_alat": "Mikroskop Binokuler",
+    "kategori": "Biologi",
+    "stok": 10,
+    "kondisi": "baik",
+    "lokasi": "Lab Biologi - Rak A",
+    "deskripsi": "Mikroskop untuk praktikum pengamatan sel"
+  }
+}
+
+docs {
+  Hanya role admin. Untuk upload foto sekaligus, gunakan request
+  "Tambah Alat dengan Foto (multipart)".
+}
