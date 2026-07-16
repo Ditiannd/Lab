@@ -2,6 +2,7 @@
 
 use App\Http\Middleware\EnsureApiRole;
 use App\Http\Middleware\RoleMiddleware;
+use App\Http\Middleware\SentryContext;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -26,7 +27,18 @@ return Application::configure(basePath: dirname(__DIR__))
         // Sanctum: dibutuhkan agar guard 'sanctum' bisa memvalidasi
         // cookie session (SPA) maupun personal access token (Bearer).
         $middleware->statefulApi();
+
+        // GlitchTip: lekatkan user details + tags/context ke setiap
+        // request, baik web maupun API.
+        $middleware->web(append: [
+            SentryContext::class,
+        ]);
+
+        $middleware->api(append: [
+            SentryContext::class,
+        ]);
     })
+    
     ->withExceptions(function (Exceptions $exceptions) {
         Integration::handles($exceptions);
         $exceptions->render(function (AuthenticationException $e, $request) {

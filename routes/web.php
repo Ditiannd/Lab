@@ -18,6 +18,16 @@ Route::get('/', function () {
     });
 });
 
+//Sementara
+Route::get('/glitchtiptest', function () {
+    throw new Exception('Glitchtip Test Error');
+});
+
+//Sementara
+Route::middleware('auth')->get('/test-error', function () {
+    throw new \Exception('Mockup error untuk verifikasi GlitchTip — dipicu pada ' . now());
+})->name('test-error');
+
 require __DIR__.'/auth.php';
 
 // ── Admin ────────────────────────────────────────────────
