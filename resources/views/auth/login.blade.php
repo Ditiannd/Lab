@@ -7,7 +7,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         * { -webkit-font-smoothing: antialiased; box-sizing: border-box; }
-        body { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif; margin: 0; padding: 20px; }
+        body { background: linear-gradient(135deg, #3a2a94 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif; margin: 0; padding: 20px; }
         .login-card { background: rgba(255,255,255,0.07); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border: 1px solid rgba(255,255,255,0.15); border-radius: 28px; padding: 40px 36px; width: 100%; max-width: 400px; box-shadow: 0 30px 80px rgba(0,0,0,0.4); }
         .logo-box { width: 70px; height: 70px; background: linear-gradient(135deg, #007AFF, #5856D6); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 8px 20px rgba(0,122,255,0.4); }
         h1 { font-size: 26px; font-weight: 700; color: white; text-align: center; margin: 0 0 4px; letter-spacing: -0.5px; }

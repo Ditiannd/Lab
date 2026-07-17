@@ -7,6 +7,7 @@ meta {
 post {
   url: {{baseUrl}}/api/peminjaman
   body: json
+  auth: inherit
 }
 
 headers {
@@ -15,7 +16,7 @@ headers {
 
 body:json {
   {
-    "id_alat": 1,
+    "id_alat": 3,
     "tanggal_pinjam": "2026-07-20",
     "tanggal_kembali": "2026-07-27",
     "jumlah": 1,
@@ -26,6 +27,6 @@ body:json {
 docs {
   Wajib login sebagai siswa. Login dulu memakai request
   "Auth → Login (Siswa)" agar {{token}} terisi token siswa.
-
+  
   Status pengajuan baru selalu "pending", menunggu ACC dari petugas/admin.
 }

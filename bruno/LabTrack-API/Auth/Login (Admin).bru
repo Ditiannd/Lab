@@ -30,15 +30,15 @@ script:post-response {
 
 docs {
   # Login
-
+  
   Login menggunakan akun admin/petugas/siswa untuk mendapatkan Bearer Token
   (Laravel Sanctum Personal Access Token).
-
+  
   Token yang didapat otomatis disimpan ke variabel collection `{{token}}`
   lewat script post-response, sehingga semua request lain di collection ini
   (yang memakai auth "Bearer {{token}}" bawaan collection) langsung bisa
   dipakai tanpa copy-paste manual.
-
+  
   Akun default hasil seeder:
   | Role    | Email             | Password |
   |---------|-------------------|----------|

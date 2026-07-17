@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 | API Routes — LabTrack
 |--------------------------------------------------------------------------
 |
-| Semua route di sini otomatis diberi prefix "/api" oleh Laravel dan
-| menggunakan guard "sanctum" (Bearer Token). Struktur otorisasi:
+| otomatis prefix "/api" oleh Laravel dan
+| memakai guard "sanctum" (Bearer Token). Struktur otorisasi:
 |
 |   - Publik   : login
 |   - auth:sanctum saja        : me, logout, logout-all, GET alat (semua role)
