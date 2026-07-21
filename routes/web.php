@@ -28,6 +28,18 @@ Route::middleware('auth')->get('/test-error', function () {
     throw new \Exception('Mockup error untuk verifikasi GlitchTip — dipicu pada ' . now());
 })->name('test-error');
 
+// ── Bruno Demo — HTML Response & PHP dd() Response ──────────
+// Khusus buat verifikasi tab "Preview" di Bruno bisa merender
+// HTML view Blade dan halaman debug
+// Symfony VarDumper hasil dd(). Publik, tidak perlu login.
+Route::get('/bruno-demo/html', function () {
+    return view('welcome');
+})->name('bruno-demo.html');
+ 
+Route::get('/bruno-demo/dd', function () {
+    dd(\App\Models\Alat::all());
+})->name('bruno-demo.dd');
+
 require __DIR__.'/auth.php';
 
 // ── Admin ────────────────────────────────────────────────

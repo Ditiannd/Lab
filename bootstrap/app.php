@@ -10,6 +10,9 @@ use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Sentry\Laravel\Integration;
+use Illuminate\Http\Request;
+
+
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -37,6 +40,8 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->api(append: [
             SentryContext::class,
         ]);
+
+        
     })
     
     ->withExceptions(function (Exceptions $exceptions) {
