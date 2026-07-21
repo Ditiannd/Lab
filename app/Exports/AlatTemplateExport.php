@@ -33,7 +33,9 @@ class AlatTemplateExport
         header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
         header("Content-Disposition: attachment; filename=\"{$filename}\"");
         header('Cache-Control: max-age=0');
-        ob_end_clean();
+        if (ob_get_level() > 0) {
+            ob_end_clean();
+        }
         $writer->save('php://output');
         exit;
     }
