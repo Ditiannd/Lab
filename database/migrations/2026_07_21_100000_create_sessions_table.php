@@ -7,14 +7,17 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Tabel ini WAJIB ada karena config/session.php -> SESSION_DRIVER=database.
-     * Tanpa tabel ini, StartSession middleware gagal baca/tulis session di
-     * SETIAP request web (termasuk GET /login), sehingga CSRF token yang
-     * disimpan di session tidak pernah persist antar request -> token
-     * mismatch -> 419 Page Expired, meskipun request-nya cuma GET.
+     * Tabel ini sudah ada duluan di database (dibuat manual / migration
+     * lamanya hilang dari repo). Migration ini hanya "mendaftarkan" bahwa
+     * tabel sessions sudah beres, tanpa mencoba create ulang -> aman
+     * dijalankan meskipun tabelnya sudah ada.
      */
     public function up(): void
     {
+        if (Schema::hasTable('sessions')) {
+            return;
+        }
+
         Schema::create('sessions', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->foreignId('user_id')->nullable()->index();
@@ -27,6 +30,7 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('sessions');
+        // Sengaja tidak drop di sini karena tabel ini "titipan" (sudah ada
+        // sebelum migration ini dibuat) — hindari kehilangan data sesi tanpa sengaja.
     }
 };
