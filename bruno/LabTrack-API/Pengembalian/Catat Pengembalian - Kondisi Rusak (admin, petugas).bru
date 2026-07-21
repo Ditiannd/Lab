@@ -7,6 +7,7 @@ meta {
 post {
   url: {{baseUrl}}/api/peminjaman/3/pengembalian
   body: json
+  auth: none
 }
 
 headers {
@@ -15,10 +16,10 @@ headers {
 
 body:json {
   {
-    "tanggal_kembali_aktual": "2026-07-27",
+    "tanggal_kembali_aktual": "2026-07-16",
     "kondisi": "rusak",
-    "deskripsi_kerusakan": "Lensa mikroskop retak saat digunakan",
-    "catatan": "Perlu penggantian lensa"
+    "deskripsi_kerusakan": "Terdapat retak saat digunakan",
+    "catatan": "Perlu penggantian"
   }
 }
 

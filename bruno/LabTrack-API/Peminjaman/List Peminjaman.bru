@@ -7,6 +7,7 @@ meta {
 get {
   url: {{baseUrl}}/api/peminjaman?status=&per_page=15
   body: none
+  auth: inherit
 }
 
 params:query {
@@ -21,6 +22,6 @@ headers {
 docs {
   - admin/petugas: melihat SEMUA pengajuan.
   - siswa       : otomatis hanya melihat riwayat miliknya sendiri.
-
+  
   Filter opsional `status`: pending | acc | ditolak | selesai
 }

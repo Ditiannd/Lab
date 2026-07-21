@@ -6,7 +6,8 @@ meta {
 
 post {
   url: {{baseUrl}}/api/alat
-  body: json
+  body: formUrlEncoded
+  auth: inherit
 }
 
 headers {
@@ -15,13 +16,26 @@ headers {
 
 body:json {
   {
-    "nama_alat": "Mikroskop Binokuler",
+    "nama_alat": "Gelas Kaca",
     "kategori": "Biologi",
-    "stok": 10,
+    "stok": 111,
     "kondisi": "baik",
-    "lokasi": "Lab Biologi - Rak A",
-    "deskripsi": "Mikroskop untuk praktikum pengamatan sel"
+    "lokasi": "Lab Biologi - Rak C",
+    "deskripsi": "Alat untuk praktik"
   }
+}
+
+body:form-urlencoded {
+  nama_alat: 
+}
+
+body:multipart-form {
+  nama_alat: Ayama
+  kategori: Tes Subjek
+  stok: 12
+  kondisi: baik
+  lokasi: Gudang Freezer
+  deskripsi: tes subjek
 }
 
 docs {
